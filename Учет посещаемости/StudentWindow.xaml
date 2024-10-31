@@ -1,0 +1,29 @@
+﻿<Window x:Class="Учет_посещаемости.StudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Учет_посещаемости"
+        mc:Ignorable="d"
+        Title="Окно студента" Height="450" Width="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" HorizontalAlignment="Left" Width="200" Stretch="UniformToFill" Source="/фон.jpg" 
+               VerticalAlignment="Stretch" />
+        <Button x:Name="Grup" Content="📗 Группы" HorizontalAlignment="Left" Margin="16,58,0,0" VerticalAlignment="Top" Width="85" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" FontSize="14" Height="23" Click="Grup_Click"/>
+        <Button x:Name="Predm" Content="📗 Предметы" HorizontalAlignment="Left" Margin="16,104,0,0" VerticalAlignment="Top" Width="104" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" FontSize="14" Height="23" Click="Predm_Click"/>
+        <Button x:Name="Cpez" Content="📗 Специальности" HorizontalAlignment="Left" Margin="16,156,0,0" VerticalAlignment="Top" Width="136" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="14" FontWeight="Bold" Height="23" Click="Cpez_Click"/>
+        <Button x:Name="Attend" Content="📗 Посещаемость" HorizontalAlignment="Left" Margin="16,217,0,0" VerticalAlignment="Top" Width="130" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="14" FontWeight="Bold" Height="23" Click="Attend_Click"/>
+        <Button x:Name="Out" Content="Выход" Margin="16,0,0,0" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" FontSize="18" Height="28" VerticalAlignment="Bottom" Click="Out_Click" Width="62" />
+        <Label Content="Меню" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="34" Width="64"/>
+        <DataGrid x:Name="grid" Grid.Column="1" Margin="53,104,42,28">
+        </DataGrid>
+        <Label Content="Просмотр данных" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Height="42" Width="236" Grid.Column="1"/>
+        <Label x:Name="Info" Content="" VerticalAlignment="Top" Height="42" Grid.Column="1" HorizontalAlignment="Right" Width="175"/>
+    </Grid>
+
+
+</Window>

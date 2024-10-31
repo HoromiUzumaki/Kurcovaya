@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Students_absencesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Attendance">
+    <Key>
+      <PropertyRef Name="Id_attendence" />
+    </Key>
+    <Property Name="Id_attendence" Type="Int32" Nullable="false" />
+    <Property Name="Id_student" Type="Int32" />
+    <Property Name="Subject" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_Attendance_Student" FromRole="Attendance" ToRole="Student" />
+    <NavigationProperty Name="Subject1" Relationship="Self.FK_Attendance_Subject" FromRole="Attendance" ToRole="Subject" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id_group" />
+    </Key>
+    <Property Name="Id_group" Type="Int32" Nullable="false" />
+    <Property Name="Group_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Specialization" Type="Int32" />
+    <NavigationProperty Name="Specialization1" Relationship="Self.FK_Group_Specialization" FromRole="Group" ToRole="Specialization" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_Student_Group" FromRole="Group" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Specialization">
+    <Key>
+      <PropertyRef Name="Id_specialization" />
+    </Key>
+    <Property Name="Id_specialization" Type="Int32" Nullable="false" />
+    <Property Name="Number_Specialization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Specialization_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_Group_Specialization" FromRole="Specialization" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id_student" />
+    </Key>
+    <Property Name="Id_student" Type="Int32" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Middle_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Group" Type="Int32" />
+    <NavigationProperty Name="Attendance" Relationship="Self.FK_Attendance_Student" FromRole="Student" ToRole="Attendance" />
+    <NavigationProperty Name="Group1" Relationship="Self.FK_Student_Group" FromRole="Student" ToRole="Group" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_Student" FromRole="Student" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="Id_subject" />
+    </Key>
+    <Property Name="Id_subject" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Attendance" Relationship="Self.FK_Attendance_Subject" FromRole="Subject" ToRole="Attendance" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Id_student" Type="Int32" />
+    <Property Name="Type_User" Type="Int32" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_User_Student" FromRole="User" ToRole="Student" />
+    <NavigationProperty Name="User_type" Relationship="Self.FK_User_User_type" FromRole="User" ToRole="User_type" />
+  </EntityType>
+  <EntityType Name="User_type">
+    <Key>
+      <PropertyRef Name="Id_types" />
+    </Key>
+    <Property Name="Id_types" Type="Int32" Nullable="false" />
+    <Property Name="Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_User_type" FromRole="User_type" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Attendance_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id_student" />
+      </Principal>
+      <Dependent Role="Attendance">
+        <PropertyRef Name="Id_student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attendance_Subject">
+    <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
+    <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id_subject" />
+      </Principal>
+      <Dependent Role="Attendance">
+        <PropertyRef Name="Subject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Specialization">
+    <End Role="Specialization" Type="Self.Specialization" Multiplicity="0..1" />
+    <End Role="Group" Type="Self.Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialization">
+        <PropertyRef Name="Id_specialization" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="Specialization" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Id_group" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Group" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id_student" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Id_student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User_type">
+    <End Role="User_type" Type="Self.User_type" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_type">
+        <PropertyRef Name="Id_types" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Type_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Students_absencesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Attendance" EntityType="Self.Attendance" />
+    <EntitySet Name="Group" EntityType="Self.Group" />
+    <EntitySet Name="Specialization" EntityType="Self.Specialization" />
+    <EntitySet Name="Student" EntityType="Self.Student" />
+    <EntitySet Name="Subject" EntityType="Self.Subject" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="User_type" EntityType="Self.User_type" />
+    <AssociationSet Name="FK_Attendance_Student" Association="Self.FK_Attendance_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Attendance" EntitySet="Attendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attendance_Subject" Association="Self.FK_Attendance_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="Attendance" EntitySet="Attendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Specialization" Association="Self.FK_Group_Specialization">
+      <End Role="Specialization" EntitySet="Specialization" />
+      <End Role="Group" EntitySet="Group" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Group" Association="Self.FK_Student_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Student" Association="Self.FK_User_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User_type" Association="Self.FK_User_User_type">
+      <End Role="User_type" EntitySet="User_type" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

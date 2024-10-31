@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dfd77f303de64f02978f000ad4082917" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="Students_absencesModel.Attendance" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Students_absencesModel.Group" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Students_absencesModel.Specialization" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Students_absencesModel.Student" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Students_absencesModel.Subject" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Students_absencesModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Students_absencesModel.User" Width="1.5" PointX="10.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Students_absencesModel.User_type" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Students_absencesModel.FK_Attendance_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="Students_absencesModel.FK_Attendance_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="Students_absencesModel.FK_Group_Specialization" ManuallyRouted="false" />
+        <AssociationConnector Association="Students_absencesModel.FK_Student_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="Students_absencesModel.FK_User_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="Students_absencesModel.FK_User_User_type" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,28 @@
+C:\Users\Хороми\Desktop\Учет посещаемости\bin\Debug\Учет посещаемости.exe.config
+C:\Users\Хороми\Desktop\Учет посещаемости\bin\Debug\Учет посещаемости.exe
+C:\Users\Хороми\Desktop\Учет посещаемости\bin\Debug\Учет посещаемости.pdb
+C:\Users\Хороми\Desktop\Учет посещаемости\bin\Debug\EntityFramework.dll
+C:\Users\Хороми\Desktop\Учет посещаемости\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Хороми\Desktop\Учет посещаемости\bin\Debug\EntityFramework.xml
+C:\Users\Хороми\Desktop\Учет посещаемости\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Хороми\Desktop\Учет посещаемости\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\Учет посещаемости.csproj.AssemblyReference.cache
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\MainWindow.g.cs
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\App.g.cs
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\Учет посещаемости_Content.g.cs
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\Учет посещаемости_MarkupCompile.cache
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\Учет посещаемости_MarkupCompile.lref
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\MainWindow.baml
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\Учет посещаемости.g.resources
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\Учет_посещаемости.Properties.Resources.resources
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\Учет посещаемости.csproj.GenerateResource.cache
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\Учет посещаемости.csproj.CoreCompileInputs.cache
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\____ ___.3423860B.Up2Date
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\Учет посещаемости.exe
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\Учет посещаемости.pdb
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\GeneralWindow.g.cs
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\GeneralWindow.baml
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\StudentWindow.g.cs
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\TeacherWindow.g.cs
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\StudentWindow.baml
+C:\Users\Хороми\Desktop\Учет посещаемости\obj\Debug\TeacherWindow.baml
