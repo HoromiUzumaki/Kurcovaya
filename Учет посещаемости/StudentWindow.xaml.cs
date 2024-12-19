@@ -42,8 +42,7 @@ namespace Учет_посещаемости
                            join sz in bd.Specialization on z.Specialization equals sz.Id_specialization
                            select new
                               {
-                                  Номер_группы = z.Id_group,
-                                  Наименование = z.Group_Name,
+                                  Номер_группы = z.Id_group  + " " + z.Group_Name,
                                   Специальность = sz.Specialization_Name
                            };
                 grid.ItemsSource = Grup.ToList();

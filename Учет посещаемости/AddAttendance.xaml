@@ -1,0 +1,26 @@
+﻿<Window x:Class="Учет_посещаемости.AddAttendance"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Учет_посещаемости"
+        mc:Ignorable="d"
+        Title="Добавление записей" Height="400" Width="400" ResizeMode="NoResize" SizeToContent="Manual">
+    <Grid Background="#fff6f0">
+        <Label Content="Студент:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,57,0,0" FontWeight="Bold"/>
+
+        <Label Content="Предмет:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,117,0,0" FontWeight="Bold"/>
+
+        <Label Content="Дата:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,177,0,0" FontWeight="Bold"/>
+
+        <Label Content="Причина отсутствия:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,237,0,0" FontWeight="Bold"/>
+
+        <ComboBox x:Name="Fio" HorizontalAlignment="Center" Margin="0,83,0,0" VerticalAlignment="Top" Width="380"/>
+        <ComboBox x:Name="Predmet" HorizontalAlignment="Center" Margin="0,143,0,0" VerticalAlignment="Top" Width="380"/>
+        <ComboBox x:Name="Prich" HorizontalAlignment="Center" Margin="0,262,0,0" VerticalAlignment="Top" Width="380"/>
+        <DatePicker x:Name="Dat" HorizontalAlignment="Center" Margin="0,203,0,0" VerticalAlignment="Top" Width="380"/>
+        <Button x:Name="Cohr" Content="Сохранить" HorizontalAlignment="Center" Margin="0,322,0,0" VerticalAlignment="Top" Height="27" Width="160" FontWeight="Bold" FontSize="16" Click="Cohr_Click"/>
+        <Label Content="Номер записи:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" FontWeight="Bold"/>
+        <TextBox x:Name="Nom" HorizontalAlignment="Center" Margin="0,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380"/>
+    </Grid>
+</Window>

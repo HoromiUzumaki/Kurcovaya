@@ -32,7 +32,7 @@ namespace Учет_посещаемости
                 }
                 else
                 {
-                   
+                    MessageBox.Show("Успешная авторизация!");
                     var userType = db.User_type.FirstOrDefault(t => t.Id_types == user.Type_User);
 
                    
@@ -61,7 +61,7 @@ namespace Учет_посещаемости
                             default:
                                 MessageBox.Show("Неизвестный тип пользователя");
                                 break;
-                        }
+                        }                    
                     }
                     else
                     {

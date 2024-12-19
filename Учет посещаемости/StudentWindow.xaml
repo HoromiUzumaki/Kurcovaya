@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Учет_посещаемости"
         mc:Ignorable="d"
         Title="Окно студента" Height="450" Width="900">
-    <Grid>
+    <Grid Background="#fff6f0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
@@ -22,7 +22,7 @@
         <DataGrid x:Name="grid" Grid.Column="1" Margin="53,104,42,28">
         </DataGrid>
         <Label Content="Просмотр данных" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Height="42" Width="236" Grid.Column="1"/>
-        <Label x:Name="Info" Content="" VerticalAlignment="Top" Height="42" Grid.Column="1" HorizontalAlignment="Right" Width="175"/>
+        <Label x:Name="Info" Content="" VerticalAlignment="Top" Height="42" Grid.Column="1" HorizontalAlignment="Right" Width="175" FontWeight="Bold" FontSize="16"/>
     </Grid>
 
 

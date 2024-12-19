@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Учет_посещаемости"
         mc:Ignorable="d"
-        Title="Окно администратора" Height="450" Width="800">
-    <Grid>
-        
+        Title="Окно администратора" Height="450" Width="900">
+    <Grid Background="#fff6f0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" HorizontalAlignment="Left" Width="200" Stretch="UniformToFill" Source="/фон.jpg" 
+VerticalAlignment="Stretch" />
+        <Label Content="Меню" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="34" Width="64"/>
+        <Button x:Name="Out" Content="Выход" Margin="16,0,0,0" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" FontSize="18" Height="28" VerticalAlignment="Bottom" Click="Out_Click" Width="62" />
+        <DataGrid x:Name="grid" Grid.Column="1" Margin="53,104,42,96"/>
+        <Label Content="Просмотр данных" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Height="42" Width="236" Grid.Column="1"/>
+        <Button x:Name="Polzovatel" Content="📗 Пользователи" HorizontalAlignment="Left" Margin="16,58,0,0" VerticalAlignment="Top" Width="126" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" FontSize="14" Height="23" Click="Polzovatel_Click"/>
+        <Button x:Name="AddPolzovatel" Content="📗 Добавить &#xD;&#xA;пользователя" HorizontalAlignment="Left" Margin="16,104,0,0" VerticalAlignment="Top" Width="104" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" FontSize="14" Height="47" Click="AddPolzovatel_Click"/>
+        <Button x:Name="ReportToExcel" Grid.Column="1" Content="Импорт в Excel" Margin="0,0,42,41" FontWeight="Bold" Click="ReportToExcel_Click" Height="42" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="129" FontSize="14"/>
+        <Button x:Name="Delete" Grid.Column="1" Content="Удалить запись" Margin="0,0,193,41" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right" Width="165" Height="42" VerticalAlignment="Bottom" Click="Delete_Click"/>
+        <Button x:Name="Grup" Content="📗 Группы" HorizontalAlignment="Left" Margin="16,171,0,0" VerticalAlignment="Top" Width="85" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" FontSize="14" Height="23" Click="Grup_Click"/>
+        <Button x:Name="Cpez" Content="📗 Специальности" HorizontalAlignment="Left" Margin="16,221,0,0" VerticalAlignment="Top" Width="136" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="14" FontWeight="Bold" Height="23" Click="Cpez_Click"/>
     </Grid>
 </Window>
